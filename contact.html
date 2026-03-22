@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - GFG Campus Club</title>
+</head>
+<body>
+
+    <header style="background-color:#4CAF50; color:white; padding:20px; text-align:center;">
+        GFG Campus Club - Contact Us
+    </header>
+
+    <nav style="background-color:#333; overflow:hidden;">
+        <a href="index.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Home</a>
+        <a href="challenge.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Challenge</a>
+        <a href="events.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Events</a>
+        <a href="resources.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Resources</a>
+        <a href="projects.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Projects</a>
+        <a href="blog.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Blog</a>
+        <a href="contact.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Contact</a>
+    </nav>
+
+    <div class="container" style="padding:20px;">
+        <h2>Connect with Us</h2>
+        <p>Join our community or follow us on social platforms:</p>
+
+        <ul id="contactLinks" style="list-style:none; padding:0;"></ul>
+    </div>
+
+    <script>
+        // Social/contact links
+        const contacts = [
+            { name: "WhatsApp Community", url: "https://chat.whatsapp.com/yourcommunitylink" },
+            { name: "Instagram", url: "https://www.instagram.com/yourclubprofile" },
+            { name: "LinkedIn", url: "https://www.linkedin.com/in/yourclubprofile" },
+            { name: "Email", url: "mailto:yourclubemail@example.com" }
+        ];
+
+        const listContainer = document.getElementById("contactLinks");
+
+        contacts.forEach(contact => {
+            const li = document.createElement("li");
+            li.style.background = "#f0f0f0";
+            li.style.padding = "15px";
+            li.style.margin = "10px 0";
+            li.style.borderRadius = "8px";
+            li.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+
+            const link = document.createElement("a");
+            link.href = contact.url;
+            link.target = "_blank";
+            link.textContent = contact.name;
+            link.style.color = "#4CAF50";
+            link.style.fontWeight = "bold";
+            link.style.textDecoration = "none";
+
+            li.appendChild(link);
+            listContainer.appendChild(li);
+        });
+    </script>
+
+</body>
+</html>

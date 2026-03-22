@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">GFG Campus Club</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="challenge.html">Challenge</a>
+        <a href="events.html">Events</a>
+        <a href="resources.html">Resources</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="events-container">
+
+    <h1>🚀 Events</h1>
+
+    <!-- Upcoming Events -->
+    <h2>Upcoming Events</h2>
+    <div class="event-card">
+        <h3>Hackathon 2026</h3>
+        <p>Date: April 10, 2026</p>
+        <button onclick="openForm()">Register Now</button>
+    </div>
+
+    <div class="event-card">
+        <h3>DSA Bootcamp</h3>
+        <p>Date: April 20, 2026</p>
+        <button onclick="openForm()">Register Now</button>
+    </div>
+
+    <!-- Past Events -->
+    <h2>Past Events</h2>
+    <div class="event-card past">
+        <h3>Web Dev Workshop</h3>
+        <p>Completed successfully 🎉</p>
+    </div>
+
+</section>
+
+<!-- Registration Form Popup -->
+<div id="formPopup" class="popup">
+    <div class="form-box">
+        <span class="close" onclick="closeForm()">×</span>
+        <h2>Register for Event</h2>
+
+        <input type="text" placeholder="Your Name" id="name">
+        <input type="text" placeholder="Team Name" id="team">
+        <input type="email" placeholder="Email" id="email">
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+</div>
+
+<script src="events.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - GFG Campus Club</title>
+</head>
+<body>
+
+    <header style="background-color:#4CAF50; color:white; padding:20px; text-align:center;">
+        GFG Campus Club - Resources
+    </header>
+
+    <nav style="background-color:#333; overflow:hidden;">
+        <a href="index.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Home</a>
+        <a href="challenge.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Challenge</a>
+        <a href="events.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Events</a>
+        <a href="resources.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Resources</a>
+    </nav>
+
+    <div class="container" style="padding:20px;">
+        <h2>Official GeeksforGeeks Resources</h2>
+        <ul id="resourcesList" style="list-style:none; padding:0;"></ul>
+    </div>
+
+    <script>
+        // List of resources
+        const resources = [
+            { name: "Data Structures", url: "https://www.geeksforgeeks.org/data-structures/" },
+            { name: "Algorithms", url: "https://www.geeksforgeeks.org/fundamentals-of-algorithms/" },
+            { name: "Practice Problems", url: "https://practice.geeksforgeeks.org/" },
+            { name: "Placement Preparation", url: "https://www.geeksforgeeks.org/category/placement-preparation/" },
+            { name: "Projects", url: "https://www.geeksforgeeks.org/computer-science-projects/" },
+            { name: "Tutorials & Guides", url: "https://www.geeksforgeeks.org/tutorials/" }
+        ];
+
+        const listContainer = document.getElementById("resourcesList");
+
+        resources.forEach(resource => {
+            const li = document.createElement("li");
+            li.style.background = "#f0f0f0";
+            li.style.margin = "10px 0";
+            li.style.padding = "15px";
+            li.style.borderRadius = "8px";
+            li.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+            
+            const link = document.createElement("a");
+            link.href = resource.url;
+            link.target = "_blank";
+            link.textContent = resource.name;
+            link.style.color = "#4CAF50";
+            link.style.fontWeight = "bold";
+            link.style.textDecoration = "none";
+
+            li.appendChild(link);
+            listContainer.appendChild(li);
+        });
+    </script>
+
+</body>
+</html>

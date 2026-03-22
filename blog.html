@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFG Campus Club - Blog</title>
+</head>
+<body>
+
+    <header style="background-color:#4CAF50; color:white; padding:20px; text-align:center;">
+        GFG Campus Club - Student Blogs
+    </header>
+
+    <nav style="background-color:#333; overflow:hidden;">
+        <a href="index.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Home</a>
+        <a href="challenge.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Challenge</a>
+        <a href="events.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Events</a>
+        <a href="resources.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Resources</a>
+        <a href="projects.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Projects</a>
+        <a href="blog.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Blog</a>
+    </nav>
+
+    <div class="container" style="padding:20px;">
+
+        <h2>Write a Blog</h2>
+        <form id="blogForm" style="margin-bottom:30px;">
+            <input type="text" id="author" placeholder="Your Name" required style="width:100%; padding:10px; margin:5px 0;">
+            <input type="text" id="title" placeholder="Blog Title" required style="width:100%; padding:10px; margin:5px 0;">
+            <textarea id="content" placeholder="Write your blog here..." rows="6" required style="width:100%; padding:10px; margin:5px 0;"></textarea>
+            <button type="submit" style="padding:10px 20px; background-color:#4CAF50; color:white; border:none; cursor:pointer; margin-top:10px;">Submit Blog</button>
+        </form>
+
+        <h2>Student Blogs</h2>
+        <div id="blogsContainer"></div>
+    </div>
+
+    <script>
+        // Array to store blogs
+        let blogs = [];
+
+        const blogForm = document.getElementById("blogForm");
+        const blogsContainer = document.getElementById("blogsContainer");
+
+        // Function to render blogs
+        function renderBlogs() {
+            blogsContainer.innerHTML = "";
+            blogs.forEach((blog, index) => {
+                const blogDiv = document.createElement("div");
+                blogDiv.style.background = "#f0f0f0";
+                blogDiv.style.padding = "15px";
+                blogDiv.style.margin = "10px 0";
+                blogDiv.style.borderRadius = "8px";
+                blogDiv.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+
+                const title = document.createElement("h3");
+                title.textContent = blog.title;
+                blogDiv.appendChild(title);
+
+                const author = document.createElement("p");
+                author.textContent = `By: ${blog.author}`;
+                author.style.fontStyle = "italic";
+                blogDiv.appendChild(author);
+
+                const content = document.createElement("p");
+                content.textContent = blog.content;
+                blogDiv.appendChild(content);
+
+                blogsContainer.appendChild(blogDiv);
+            });
+        }
+
+        // Handle form submission
+        blogForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const author = document.getElementById("author").value;
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            // Add blog to array
+            blogs.unshift({ author, title, content }); // unshift to show newest first
+
+            // Reset form
+            blogForm.reset();
+
+            // Render updated blogs
+            renderBlogs();
+        });
+    </script>
+
+</body>
+</html>

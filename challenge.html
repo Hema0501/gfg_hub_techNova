@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">GFG Campus Club</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="challenge.html">Challenge</a>
+        <a href="events.html">Events</a>
+        <a href="resources.html">Resources</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="challenge-container">
+
+    <!-- Timer + Streak -->
+    <div class="top-bar">
+        <div id="timer">⏳ Time Left: 24:00:00</div>
+        <div id="streak">🔥 Streak: 0 days</div>
+    </div>
+
+    <!-- Question -->
+    <div class="question-box">
+        <h2>Daily Challenge</h2>
+        <p><b>Problem:</b> Two Sum</p>
+        <p>
+            Given an array of integers nums and an integer target, return indices 
+            of the two numbers such that they add up to target.
+        </p>
+
+        <p><b>Example:</b></p>
+        <p>Input: nums = [2,7,11,15], target = 9</p>
+        <p>Output: [0,1]</p>
+    </div>
+
+    <!-- Code Editor -->
+    <div class="editor">
+        <textarea id="code" placeholder="Write your code here..."></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button onclick="runCode()">Run</button>
+        <button onclick="submitCode()">Submit</button>
+    </div>
+
+    <!-- Output -->
+    <div class="output">
+        <h3>Output:</h3>
+        <pre id="output"></pre>
+    </div>
+
+</section>
+
+<script src="challenge.js"></script>
+
+</body>
+</html>

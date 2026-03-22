@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Projects - GFG Campus Club</title>
+</head>
+<body>
+
+    <header style="background-color:#4CAF50; color:white; padding:20px; text-align:center;">
+        GFG Campus Club - Student Projects
+    </header>
+
+    <nav style="background-color:#333; overflow:hidden;">
+        <a href="index.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Home</a>
+        <a href="challenge.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Challenge</a>
+        <a href="events.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Events</a>
+        <a href="resources.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Resources</a>
+        <a href="projects.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Projects</a>
+    </nav>
+
+    <div class="container" style="padding:20px;">
+        <h2>Student Projects</h2>
+        <div id="projectsList"></div>
+    </div>
+
+    <script>
+        // Array of student projects
+        const projects = [
+            {
+                name: "LostLink - Lost and Found Board",
+                description: "A platform where users can post lost/found items, search and filter by category, and track the status.",
+                qna: "Q: What tech stack is used?\nA: HTML, CSS, JS, Firebase.\n\nQ: Can users upload images?\nA: Yes, photos and receipts are uploaded.",
+                source: "https://github.com/hemapriya/lostlink"
+            },
+            {
+                name: "Green Habit Tracker",
+                description: "A web app to track sustainable habits and environmental impact.",
+                qna: "Q: How are impacts measured?\nA: Tracks CO2, water, and waste savings.\n\nQ: Is gamification included?\nA: Yes, points and badges for completing actions.",
+                source: "https://github.com/hemapriya/green-habit-tracker"
+            },
+            {
+                name: "Project Kisan - AI Personal Assistant",
+                description: "AI assistant for small-scale farmers providing advice using Google Vertex AI.",
+                qna: "Q: What features are included?\nA: Crop suggestions, weather info, and market prices.\n\nQ: Platform?\nA: Web-based assistant.",
+                source: "https://github.com/hemapriya/project-kisan"
+            }
+        ];
+
+        const projectsContainer = document.getElementById("projectsList");
+
+        projects.forEach(project => {
+            const projectDiv = document.createElement("div");
+            projectDiv.style.background = "#f0f0f0";
+            projectDiv.style.padding = "15px";
+            projectDiv.style.margin = "10px 0";
+            projectDiv.style.borderRadius = "8px";
+            projectDiv.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+
+            // Project Name
+            const name = document.createElement("h3");
+            name.textContent = project.name;
+            projectDiv.appendChild(name);
+
+            // Description
+            const desc = document.createElement("p");
+            desc.textContent = project.description;
+            projectDiv.appendChild(desc);
+
+            // Q & A box
+            const qnaBox = document.createElement("textarea");
+            qnaBox.value = project.qna;
+            qnaBox.rows = 6;
+            qnaBox.style.width = "100%";
+            qnaBox.style.padding = "10px";
+            qnaBox.style.marginTop = "10px";
+            qnaBox.style.borderRadius = "5px";
+            qnaBox.readOnly = true;
+            projectDiv.appendChild(qnaBox);
+
+            // Source code link
+            const sourceLink = document.createElement("a");
+            sourceLink.href = project.source;
+            sourceLink.target = "_blank";
+            sourceLink.textContent = "View Source Code";
+            sourceLink.style.display = "inline-block";
+            sourceLink.style.marginTop = "10px";
+            sourceLink.style.color = "#4CAF50";
+            sourceLink.style.fontWeight = "bold";
+            sourceLink.style.textDecoration = "none";
+            projectDiv.appendChild(sourceLink);
+
+            projectsContainer.appendChild(projectDiv);
+        });
+    </script>
+
+</body>
+</html>

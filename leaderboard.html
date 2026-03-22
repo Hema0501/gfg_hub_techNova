@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - GFG Campus Club</title>
+</head>
+<body>
+
+    <header style="background-color:#4CAF50; color:white; padding:20px; text-align:center;">
+        GFG Campus Club - Leaderboard
+    </header>
+
+    <nav style="background-color:#333; overflow:hidden;">
+        <a href="index.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Home</a>
+        <a href="challenge.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Challenge</a>
+        <a href="events.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Events</a>
+        <a href="resources.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Resources</a>
+        <a href="leaderboard.html" style="float:left; color:white; padding:14px 20px; text-decoration:none;">Leaderboard</a>
+    </nav>
+
+    <div class="container" style="padding:20px;">
+        <h2>Student Leaderboard</h2>
+        <table id="leaderboardTable" border="1" style="width:100%; border-collapse: collapse; text-align:left;">
+            <thead>
+                <tr style="background-color:#4CAF50; color:white;">
+                    <th>Rank</th>
+                    <th>Student Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JS will populate rows here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample leaderboard data
+        const students = [
+            { name: "Hemapriya Radhakrishnan", points: 250 },
+            { name: "Aarav Singh", points: 200 },
+            { name: "Mira Kapoor", points: 180 },
+            { name: "Rohan Verma", points: 150 },
+            { name: "Anika Sharma", points: 120 }
+        ];
+
+        // Sort students by points descending
+        students.sort((a, b) => b.points - a.points);
+
+        const tableBody = document.querySelector("#leaderboardTable tbody");
+
+        students.forEach((student, index) => {
+            const row = document.createElement("tr");
+
+            const rankCell = document.createElement("td");
+            rankCell.textContent = index + 1;
+            row.appendChild(rankCell);
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = student.name;
+            row.appendChild(nameCell);
+
+            const pointsCell = document.createElement("td");
+            pointsCell.textContent = student.points;
+            row.appendChild(pointsCell);
+
+            tableBody.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>

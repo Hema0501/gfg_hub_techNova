@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1f14;
+    color: white;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #0b1f14;
+}
+
+.logo {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 12px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00ff88;
+}
+
+.login-btn {
+    background: #00ff88;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, #0f3d2e, #08140e);
+}
+
+.tag {
+    color: #00ff88;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+h1 span {
+    color: #00ff88;
+}
+
+.desc {
+    max-width: 600px;
+    margin: 20px auto;
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 30px;
+}
+
+.primary {
+    background: #00ff88;
+    border: none;
+    padding: 12px 20px;
+    margin-right: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid #888;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+}
